@@ -1,0 +1,16 @@
+name: Run every 10 minutes
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # runs every 10 minutes (UTC time)
+  workflow_dispatch:          # lets you trigger it manually too
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print a message
+        run: |
+          echo "Hello, world!"
+          echo "Time now: $(date)"
